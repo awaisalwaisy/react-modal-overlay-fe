@@ -1,14 +1,23 @@
-import { HeyDev } from "@/components";
+import { OverlayModal } from "@/components";
 import { Button } from "@nextui-org/react";
-import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const Home = () => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const handleModal = () => {
+    // setIsOpen(!isOpen);
+    dialogRef.current?.showModal();
+  };
   return (
     <main className="page">
-      <Link to="/about">
-        <Button color="primary">About</Button>
-      </Link>
-      <HeyDev />
+      <h1 className="text-3xl font-bold mb-12">Modal wth an Overlay</h1>
+      <div className="flex justify-center">
+        <Button className="w-40" onClick={handleModal} color="secondary">
+          Show offer
+        </Button>
+      </div>
+      <OverlayModal ref={dialogRef} />
     </main>
   );
 };

@@ -5,3 +5,8 @@
 .page {
     @apply grid place-content-center min-h-screen bg-gray-100;
 }
+
+* {
+    /* border: 1px solid red; */
+    /* for debugging */
+}
